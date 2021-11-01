@@ -204,11 +204,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                     </button>
                 </div>
-
-                <div class="content">
-                    {#if $$slots.customView}
-                        <slot name="customView" item={ datum }></slot>
-                    {:else}
+                
+                <slot name="customView" item={ datum }>
+                    <div class="content">
                         {#if datum.html}
                             {@html datum.html}
                         {:else if datum.text}
@@ -216,8 +214,8 @@
                         {:else}
                             <p>{datum}</p>
                         {/if}
-                    {/if}
-                </div>
+                    </div>
+                </slot>
 
                 <div class="buttons delete">
                     {#if removesItems}
