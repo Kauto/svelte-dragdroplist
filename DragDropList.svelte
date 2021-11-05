@@ -72,7 +72,7 @@
 </script>
 
 <style>
-    main {
+    .dragdroplist {
         position: relative;
     }
 
@@ -170,7 +170,7 @@
     <div 
         bind:this={ghost}
         id="ghost"
-        class={grabbed ? "ghost item haunting" : "ghost item"}
+        class="{grabbed ? 'ghost item haunting' : 'ghost item'}"
         style={"top: " + (mouseY + offsetY - layerY) + "px"}><p></p></div>
     <div 
         class="list"
@@ -181,7 +181,7 @@
         {#each data as datum, i (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum))}
             <div 
                 id={(grabbed && (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum)) == grabbed.dataset.id) ? "grabbed" : ""}
-                class={(grabbed && (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum)) == grabbed.dataset.id) ? "item grabbed" : "item"}
+                class="{(grabbed && (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum)) == grabbed.dataset.id) ? 'item grabbed' : 'item'}"
                 data-index={i}
                 data-id={(datum[objectKey] ? datum[objectKey] : JSON.stringify(datum))}
                 data-grabY="0"
