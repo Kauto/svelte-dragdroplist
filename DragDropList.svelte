@@ -182,7 +182,7 @@
             <div 
                 id={(grabbed && (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum)) == grabbed.dataset.id) ? "grabbed" : ""}
                 class="item"
-                class.grapped={(grabbed && (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum)) == grabbed.dataset.id)}
+                class:grapped={(grabbed && (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum)) == grabbed.dataset.id)}
                 data-index={i}
                 data-id={(datum[objectKey] ? datum[objectKey] : JSON.stringify(datum))}
                 data-grabY="0"
