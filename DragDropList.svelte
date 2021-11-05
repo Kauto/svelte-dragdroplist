@@ -133,11 +133,11 @@
         width: 32px;
     }
 
-    #grabbed {
+    .grabbed {
         opacity: 0.0;
     }
 
-    #ghost {
+    .ghost {
         pointer-events: none;
         z-index: -5;
         position: absolute;
@@ -146,11 +146,11 @@
         opacity: 0.0;
     }
 
-    #ghost * {
+    .ghost * {
         pointer-events: none;
     }
 
-    #ghost.haunting {
+    .ghost.haunting {
         z-index: 20;
         opacity: 1.0;
     }
@@ -170,7 +170,7 @@
     <div 
         bind:this={ghost}
         id="ghost"
-        class={grabbed ? "item haunting" : "item"}
+        class={grabbed ? "ghost item haunting" : "ghost item"}
         style={"top: " + (mouseY + offsetY - layerY) + "px"}><p></p></div>
     <div 
         class="list"
@@ -182,6 +182,7 @@
             <div 
                 id={(grabbed && (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum)) == grabbed.dataset.id) ? "grabbed" : ""}
                 class="item"
+                class.grapped={(grabbed && (datum[objectKey] ? datum[objectKey] : JSON.stringify(datum)) == grabbed.dataset.id)}
                 data-index={i}
                 data-id={(datum[objectKey] ? datum[objectKey] : JSON.stringify(datum))}
                 data-grabY="0"
