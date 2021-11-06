@@ -205,7 +205,7 @@
                     </button>
                 </div>
                 
-                <slot name="customView" item={ datum }>
+                <slot name="customView" item={ datum } index={i}>
                     <div class="content">
                         {#if datum.html}
                             {@html datum.html}
